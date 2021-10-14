@@ -35,7 +35,7 @@ And if you want to persistent the white list, you should mount a file to `/usr/l
 
 ### TODO
 
-[x] use non-root user to run nginx
+- [ ] use non-root user to run nginx
 
 
 ### Thanks

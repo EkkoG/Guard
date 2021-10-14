@@ -16,13 +16,9 @@ Create a `docker-compose.yml` file, put this to it
 version: '3.5'
 services:
   mtproxy-admin:
-    build: .
+    image: ghcr.io/cielpy/guard:master
     container_name: mtproxy-admin
     restart: always
-    networks:
-      xxx-com:
-        aliases: 
-          - internal-mtproxy-admin.xxx.com
     ports:
       - "6080:80"
       - "6443:443"
@@ -30,12 +26,6 @@ services:
       - ./ip_white.conf:/usr/local/openresty/nginx/conf/ip_white.conf
     environment:
       - SERVICE_PROTECTED=internal-mtproxy.xxx.com:443
-    
-
-
-networks:
-  xxx-com:
-    name: xxx-com
 ```
 
 The most important thing is, you must set a `SERVICE_PROTECTED` env to declare which service you need protect, it support both ip:port and domant:port format.

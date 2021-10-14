@@ -1,7 +1,8 @@
 version: '3.5'
 services:
   mtproxy-admin:
-    image: ghcr.io/cielpy/guard:master
+    # image: ghcr.io/cielpy/guard:master
+    build: .
     container_name: mtproxy-admin
     restart: always
     networks:

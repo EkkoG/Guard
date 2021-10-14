@@ -1,0 +1,23 @@
+version: '3.5'
+services:
+  mtproxy-admin:
+    build: .
+    container_name: mtproxy-admin
+    restart: always
+    networks:
+      xxx-com:
+        aliases: 
+          - internal-mtproxy-admin.xxx.com
+    ports:
+      - "6080:80"
+      - "6443:443"
+    volumes:
+      - ./ip_white.conf:/usr/local/openresty/nginx/conf/ip_white.conf
+    environment:
+      - SERVICE_PROTECTED=internal-mtproxy.xxx.com:443
+    
+
+
+networks:
+  xxx-com:
+    name: xxx-com

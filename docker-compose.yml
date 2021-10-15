@@ -15,7 +15,7 @@ services:
     volumes:
       - ./ip_white.conf:/usr/local/openresty/nginx/conf/ip_white.conf
     environment:
-      - SERVICE_PROTECTED=internal-mtproxy.xxx.com:443
+      - SERVICE_PROTECTED=127.0.0.1:443
     
 
 

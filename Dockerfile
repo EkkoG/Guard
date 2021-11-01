@@ -6,6 +6,7 @@ COPY nginx.conf /usr/local/openresty/nginx/conf/nginx.conf
 COPY default.conf /etc/nginx/conf.d/default.conf
 COPY index.html /usr/local/openresty/nginx/html
 COPY ngx_add.sh /opt/ngx_add.sh
+COPY clean_ips.sh /opt/clean_ips.sh
 
 CMD ["/usr/local/bin/cmd.sh"]
 

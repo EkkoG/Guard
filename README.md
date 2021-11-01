@@ -32,6 +32,15 @@ The most important thing is, you must set a `SERVICE_PROTECTED` env to declare w
 
 And if you want to persistent the white list, you should mount a file to `/usr/local/openresty/nginx/conf/ip_white.conf`
 
+### Clean IP
+
+If you want to clean IP in whitelist, run script in the container, like this
+
+```
+docker exec -ti container-name /opt/clean_ips.sh
+```
+
+I personally would add it to cron job.
 
 ### TODO
 
